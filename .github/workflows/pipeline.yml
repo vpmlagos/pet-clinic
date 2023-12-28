@@ -1,0 +1,55 @@
+name: CI
+
+ 
+
+on:
+
+  
+
+  push: #por cada push se va a ejecutar el pipeline
+
+   # branches: [ "main" ] #para esta rama en caso de dos ["nombre1","nombre2"], en caso de regex "nombre-*"
+
+  #pull_request:
+
+    #branches: [ "main" ]
+
+ 
+
+  
+
+  workflow_dispatch: #ejecucion manual
+
+ 
+
+ 
+
+jobs: #orden lógico de las acciones
+
+  
+
+  build: #declaracion del job
+
+    
+
+    runs-on: ubuntu-latest
+
+ 
+
+   
+
+    steps:
+
+    
+
+      - uses: actions/checkout@v3
+
+ 
+
+      # Runs a set of commands using the runners shell
+
+      - name: Run a multi-line script
+
+        run: |
+
+          echo "Hola Mundo"
