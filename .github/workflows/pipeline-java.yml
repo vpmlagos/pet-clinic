@@ -21,4 +21,11 @@ jobs:
       - name: Análisis SonarCloud
         run: |
           chmod +x ./gradlew
-          ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_SONARCLOUD}}
+          ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_SONARCLOUD }}
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Realizar tests
+        run: |
+          ./gradlew test
